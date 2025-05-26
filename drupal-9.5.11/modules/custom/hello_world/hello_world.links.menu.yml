@@ -1,0 +1,16 @@
+hello_world.admin:
+  title: 'Hello module settings'
+  description: 'example of how to make adminsettings page link'
+  parent: system.admin_config_development
+  route_name: hello_world.content
+  weight: 100  # used for ordering in the menu
+
+# menu link so that settings page appears in the admin menu
+  hello_world.settings_link:
+  title: 'Hello World Settings'
+  description: 'example of configure the Hello World module.'
+  parent: system.admin_config_development
+  route_name: hello_world.settings_form
+  weight: 100 # used for ordering in the menu
+  # weight parameter used to control the order in which menu items appear in admin UI
+  # the lower the number, the higher the priority or vica versa

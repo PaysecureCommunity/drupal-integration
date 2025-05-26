@@ -1,0 +1,12 @@
+# info.yml- the hook that lets drupal know 'this folder contains module.' without yml file drupal won't recognize folder as module.
+name: Hello World Module
+type: module    # tell drupal this is a module  
+description: 'creates a page showing "Hello World".'
+core_version_requirement: ^9.5 || ^10 # module compatible with Drupal 9.5 and above
+# dependencies: list of other modules your module depends on.
+dependencies:
+- node
+- views
+- views_ui
+# package: the category under which this module will be listed in the admin interface. 
+package: Custom
