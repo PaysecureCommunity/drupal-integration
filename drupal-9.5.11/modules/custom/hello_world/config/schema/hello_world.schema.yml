@@ -1,0 +1,11 @@
+hello_world.settings:
+# standard way in Drupal to define structure and validation rules for configuration data
+type: config_object
+label: 'hello world settings'
+mapping:
+paysecure_api_key:
+type: string
+label: 'paysecure API key'
+paysecure_endpoint:
+type: string
+label: 'paysecure endpoint'

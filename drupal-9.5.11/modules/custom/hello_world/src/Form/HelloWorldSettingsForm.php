@@ -3,7 +3,7 @@
 namespace Drupal\hello_world\Form;
 
 // uses namespaces to organize and automate the loading of classes
-use Drupal\core\Form\ConfigFormBase;
+use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -41,6 +41,16 @@ class HelloWorldSettingsForm extends ConfigFormBase {
             '#description' => $this->t('Enter a default message to be used by Hello World Block.'),
         ];
 
+        $form['paysecure_api_key'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('PaySecure API Key'),
+            '#default_value' => $config->get('paysecure_api_key'),
+        ];
+        $form['paysecure_endpoint'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('PaySecure Endpoint'), 
+            '#default_value' => $config->get('paysecure_endpoint'),
+        ];
         return parent::buildForm($form, $form_state);
     }
 
@@ -54,6 +64,8 @@ class HelloWorldSettingsForm extends ConfigFormBase {
 
         $this->config('hello_world.settings')
         ->set('hello.name', $form_state->getValue('hello_name')) // set() method sets value of hello.name in hello_world.settings.yml
+        ->set('paysecure_api_key', $form_state->getValue('paysecure_api_key'))
+        ->set('paysecure_endpoint', $form_state->getValue('paysecure_endpoint'))
         ->save();
     }
 }

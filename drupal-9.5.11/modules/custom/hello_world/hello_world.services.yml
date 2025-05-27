@@ -1,0 +1,4 @@
+services:
+hello_world.paysecure_service:
+class: 'Drupal\hello_world\PaysecureService'
+arguments: ['@config.factory', '@http_client', '@logger.channel.default']
