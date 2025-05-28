@@ -1,11 +1,18 @@
 hello_world.settings:
 # standard way in Drupal to define structure and validation rules for configuration data
 type: config_object
-label: 'hello world settings'
+label: 'Hello World Settings'
 mapping:
+hello:
+type: mapping
+label: 'Hello Settings'
+mapping:
+name:
+type: string
+label: 'Default Hello Message'
 paysecure_api_key:
 type: string
-label: 'paysecure API key'
+label: 'Paysecure API Key'
 paysecure_endpoint:
 type: string
-label: 'paysecure endpoint'
+label: 'Paysecure Endpoint'

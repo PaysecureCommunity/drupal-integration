@@ -19,3 +19,19 @@ _form: '\Drupal\hello_world\Form\HelloWorldSettingsForm'
 _title: 'Hello World Settings'
 requirements:
 _permission: 'administer site configuration'  # this permission is required to access the settings form
+
+hello_world.payment_return:
+path: '/hello/payment-return'
+defaults:
+_controller: '\Drupal\hello_world\Controller\HelloController::paymentReturn'
+_title: 'PaySecure Return'
+requirements:
+_permission: 'access_content' # this permission is required to access the payment return page
+
+hello_world.payment_form:
+path: '/hello/payment-form'
+defaults:
+_controller: '\Drupal\hello_world\Controller\HelloController::paymentForm'
+_title: 'PaySecure Payment Form'
+requirements:
+_permission: 'access_content' # this permission is required to access the payment form page

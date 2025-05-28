@@ -45,11 +45,13 @@ class HelloWorldSettingsForm extends ConfigFormBase {
             '#type' => 'textfield',
             '#title' => $this->t('PaySecure API Key'),
             '#default_value' => $config->get('paysecure_api_key'),
+            '#description' => $this->t('Enter your PaySecure API key to authenticate API requests.'),
         ];
         $form['paysecure_endpoint'] = [
             '#type' => 'textfield',
             '#title' => $this->t('PaySecure Endpoint'), 
             '#default_value' => $config->get('paysecure_endpoint'),
+            '#description' => $this->t('Enter the PaySecure API endpoint URL.'),
         ];
         return parent::buildForm($form, $form_state);
     }
