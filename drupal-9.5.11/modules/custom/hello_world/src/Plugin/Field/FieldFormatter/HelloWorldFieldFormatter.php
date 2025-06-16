@@ -7,8 +7,18 @@ namespace Drupal\hello_world\Plugin\Field\FieldFormatter;
 // FieldItemListInterface located in c:\xampp\htdocs\drupal-integration\drupal-9.5.11\core\lib\Drupal\Core\Field\FieldItemListInterface.php
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Form\FormStateInterface;
 /**
- * 
+ * Plugin implementation of the 'hello_world_field_formatter' formatter.
+ *
+ * @FieldFormatter(
+ *   id = "hello_world_field_formatter",
+ *   label = @Translation("Hello World Field Formatter"),
+ *   field_types = {
+ *     "hello_world_field"
+ *   }
+ * )
 */ 
 class HelloWorldFieldFormatter extends FormatterBase {
 

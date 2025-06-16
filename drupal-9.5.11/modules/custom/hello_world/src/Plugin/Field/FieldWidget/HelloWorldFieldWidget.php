@@ -11,12 +11,12 @@ use Drupal\Core\Form\FormStateInterface;
  * @FieldWidget(
  * id = "hello_world_field_widget",
  * label = @Translation("Hello World Field Widget"),
- * @Translation used to mark strings for translation, allows module to support multiple languages without code changes
  * field_types = {
  *  "hello_world_field"
  * } 
  * )
  * 
+ * Note: @Translation is used to mark strings for translation, allowing modules to support multiple languages.
  */
 class HelloWorldFieldWidget extends WidgetBase {
 

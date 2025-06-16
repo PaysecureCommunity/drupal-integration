@@ -1,16 +1,55 @@
 hello_world.admin:
   title: 'Hello module settings'
-  description: 'example of how to make adminsettings page link'
+  description: 'Example of how to make admin settings page link'
   parent: system.admin_config_development
   route_name: hello_world.content
-  weight: 100  # used for ordering in the menu
+  weight: 100
 
-# menu link so that settings page appears in the admin menu
-  hello_world.settings_link:
+hello_world.settings_link:
   title: 'Hello World Settings'
-  description: 'example of configure the Hello World module.'
+  description: 'Example of configuring the Hello World module'
   parent: system.admin_config_development
   route_name: hello_world.settings_form
-  weight: 100 # used for ordering in the menu
-  # weight parameter used to control the order in which menu items appear in admin UI
-  # the lower the number, the higher the priority or vica versa
+  weight: 101
+
+hello_world.payment_return_link:
+  title: 'PaySecure Return'
+  description: 'PaySecure payment return handler.'
+  parent: system.admin_config_development
+  route_name: hello_world.payment_return
+  weight: 103
+
+hello_world.payment_return_ui_link:
+  title: 'PaySecure Return UI'
+  description: 'Show PaySecure return status without URL query params'
+  route_name: hello_world.payment_return_ui
+  parent: system.admin_config_development
+  weight: 105 
+  
+hello_world.payment_form_link:
+  title: 'PaySecure Payment Form'
+  description: 'Form to initiate PaySecure payments.'
+  parent: system.admin_config_development
+  route_name: hello_world.payment_form
+  weight: 104
+
+hello_world.field_formatter_link:
+  title: 'Hello World Field Formatter'
+  description: 'Example field formatter page.'
+  parent: system.admin_config_development
+  route_name: hello_world.field_formatter
+  weight: 105
+
+hello_world.field_demo_link:
+  title: 'Hello World Field Demo'
+  description: 'Demo page for Hello World custom field type.'
+  route_name: hello_world.field_demo
+  parent: system.admin_config_development
+  weight: 105
+
+hello_world.field_widget_link:
+  title: 'Hello World Field Widget'
+  description: 'Displays the custom field widget output.'
+  parent: system.admin_config_development
+  route_name: hello_world.field_widget
+  weight: 104
