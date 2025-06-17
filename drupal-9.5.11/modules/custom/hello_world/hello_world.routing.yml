@@ -1,37 +1,111 @@
-# routing.yml file essential for defining custom routes to tell the system which URL paths should be handled by your module.
-# hello_world.content: unique route name.
-# path: '/hello': the URL path / used for urls
-# _controller: class or method that returns content drupal uses namespaces to organize and automatically load classes.
-# _title: 'Hello World': the title of page and _permission: only shown to users with 'access content' permission.
-
 hello_world.content:
-path: '/hello'
-defaults:
-_controller: '\Drupal\hello_world\Controller\HelloController::hello'
-_title: 'Hello World'
-requirements:
-_permission: 'access content'
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::hello'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
 
 hello_world.settings_form:
-path: '/admin/config/development/hello-world'
-defaults:
-_form: '\Drupal\hello_world\Form\HelloWorldSettingsForm'
-_title: 'Hello World Settings'
-requirements:
-_permission: 'administer site configuration'  # this permission is required to access the settings form
+  path: '/admin/config/development/hello-world'
+  defaults:
+    _form: '\Drupal\hello_world\Form\HelloWorldSettingsForm'
+    _title: 'Hello World Settings'
+  requirements:
+    _permission: 'administer site configuration'
 
 hello_world.payment_return:
-path: '/hello/payment-return'
-defaults:
-_controller: '\Drupal\hello_world\Controller\HelloController::paymentReturn'
-_title: 'PaySecure Return'
-requirements:
-_permission: 'access_content' # this permission is required to access the payment return page
+  path: '/hello/payment-return'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::paymentReturn'
+    _title: 'PaySecure Return'
+  requirements:
+    _permission: 'access content'
+
+hello_world.payment_return_ui:
+  path: '/hello-world/payment-return-ui'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::paymentReturnUI'         
+    _title: 'Payment Return UI'
+  requirements:
+    _permission: 'access content' 
 
 hello_world.payment_form:
-path: '/hello/payment-form'
-defaults:
-_controller: '\Drupal\hello_world\Controller\HelloController::paymentForm'
-_title: 'PaySecure Payment Form'
-requirements:
-_permission: 'access_content' # this permission is required to access the payment form page
+  path: '/hello/payment-form'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::paymentForm'
+    _title: 'PaySecure Payment Form'
+  requirements:
+    _permission: 'access content'
+
+hello_world.field_formatter:
+  path: '/hello/HelloWorldFieldFormatter'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::fieldFormatter'
+    _title: 'Hello World Field Formatter'
+  requirements:
+    _permission: 'access content'
+
+hello_world.field_demo:
+  path: '/hello/field-demo'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::fieldDemo'
+    _title: 'Hello World Field Demo'
+  requirements:
+    _permission: 'access content'
+
+hello_world.field_widget:
+  path: '/hello/field-widget'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::fieldWidget'
+    _title: 'Hello World Field Widget'
+  requirements:
+    _permission: 'access content'
+
+hello_world.test_paysecure:
+  path: '/hello-world/test-paysecure'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::testPaysecureService'
+    _title: 'Test Paysecure API'
+  requirements:
+    _permission: 'access content'
+
+hello_world.set_api_key:
+  path: '/hello-world/set-api-key'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::setKeyDemo'
+    _title: 'Set API Key'
+  requirements:
+    _permission: 'administer site configuration'
+
+hello_world.set_endpoint_demo:
+  path: '/hello-world/set-endpoint-demo'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::setEndpointDemo'
+    _title: 'Set Endpoint Demo'
+  requirements:
+    _permission: 'administer site configuration'
+
+hello_world.purchase_url_demo:
+  path: '/hello-world/purchase-url'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::purchaseUrlDemo'
+    _title: 'Purchase URL Demo'
+  requirements:
+    _permission: 'access content'
+
+hello_world.payment_success:
+  path: '/hello/payment-success'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::paymentSuccess'
+    _title: 'Payment Success'
+  requirements:
+    _permission: 'access content'
+
+hello_world.payment_failure:
+  path: '/hello/payment-failure'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::paymentFailure'
+    _title: 'Payment Failed'
+  requirements:
+    _permission: 'access content'

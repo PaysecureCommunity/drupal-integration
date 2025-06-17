@@ -4,15 +4,14 @@
     use Drupal\Core\Block\BlockBase;
     use Drupal\Core\Form\FormStateInterface;
 
-     /**
-      * php doc(documentation block)- used to document code in a way that tools like ide can understand
-      * provides a 'Hello World' block
-      * 
-    * @Block(
-    * id="hello_world_block",
-    * admin_label=@Translation("Hello World Block"),
-    * )
-    */
+    /**
+ * Provides a 'Hello World' block.
+ *
+ * @Block(
+ *   id = "hello_world_block",
+ *   admin_label = @Translation("Hello World Block")
+ * )
+ */
     class ExampleBlock extends BlockBase {
 
         /**
@@ -24,7 +23,7 @@
             // defaultConfiguration() method used to load initial values
             $default_config = \Drupal::config('hello_world.settings'); // drupal stores file under namespace: hello_world.settings
             return [
-                'hello_message' => $default_config->get('hello.name'), // used to fetch config from module's hello_world.settings.yml
+                'hello_message' => $default_config->get('hello.name') ?? 'Hello world', // used to fetch config from module's hello_world.settings.yml
                 // get('hello.name') returns 'Hello world'
             ];
         }

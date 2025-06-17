@@ -1,3 +1,10 @@
-paysecure_api_key: ''
-paysecure_endpoint: 'https://api.paysecure.com/v1'
+hello:
+  name: 'Hello world'
 
+paysecure_endpoint: 'https://staging.paysecure.net/staging/v1/purchases/'
+paysecure_mode: 'test'
+api_timeout: 30
+allowed_currencies:
+  - USD
+  - EUR
+  - GBP
